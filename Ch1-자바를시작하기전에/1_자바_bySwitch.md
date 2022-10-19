@@ -115,5 +115,9 @@
    - Sweep? 사용되지 않는 메모리를 해제
    - Stop The World로 모든 작업을 중단시키면 GC는 스택의 모든 변수 또는 Reachable객체를 탐색후 MarkAndSweep 한다.
   ### Minor GC
+   - Eden영역이 가득차면 Minor GC가 발생한다.
+   - 사용되지 않는 메모리는 해제되고, Eden영역에 존재하는 객체는 Survivor영역으로 옮겨진다.
+   - 과정을 반복하며 계속해서 살아남은 객체는 Old영역으로 이동된다.
   ### Major GC
-  
+   - Old영역 메모리가 부족해지면 발생한다.
+   - Old영역은 Young영역보다 크기고 Young영역을 참조할 수 있기때문에 일반적으로 MinorGC보다 시간이 오래 걸린다.
