@@ -11,3 +11,10 @@
   ```
   - ![image](https://user-images.githubusercontent.com/95848796/198889963-92d9356e-832e-4c01-a572-f2cfde63ec81.png)
   - https://www.geeksforgeeks.org/wrapper-classes-java/
+---
+<br>
+
+
+## Number클래스
+  - Number클래스는 추상클래스로 내부적으로 숫자를 멤버변수로 갖는 클래스들의 조상이다.
+  - ![image](https://user-images.githubusercontent.com/95848796/198890097-05484936-f0d9-4051-a648-4b9cf9fd5a1d.png)
