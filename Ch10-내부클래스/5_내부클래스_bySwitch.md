@@ -1,3 +1,4 @@
+
 ## 내부클래스란?
   - 클래스안에 선언된 클래스
   ```
@@ -19,3 +20,20 @@
   ```
   
   
+## 내부클래스의 선언
+  ```java
+  class Outer {
+    class InstanceInner{}
+    static class SataticInner{}
+    
+    void myMethod() {
+      class LocalInner {}
+    }
+  }
+  ```
+  
+## 내부클래스의 제어자와 접근성
+  - abstract final같은 제어자 사용할수있고 멤버변수들처럼 private, protected같은 접근제어자도 사용가능하다.
+  - static클래스만 static멤버를 가질 수 있다.
+  - final static같이붙은 변수는 상수이므로 모든 내부 클래스에서 정의 가능하다
+  - 컴파일시 외부클래스명$내부클래스명.class 형식으로 된다.
