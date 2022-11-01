@@ -32,17 +32,39 @@
   - 키는 중복을 허용하지 않고 값은 중복을 허용한다.
   - 구현클래스: HashMap, TreeMap, Hashtable, Properties ...
   ```
----
-<br>
-
-
+  
   ### Collection 인터페이스
    - ![image](https://user-images.githubusercontent.com/95848796/199273657-359e5d01-cf0d-46f6-8d85-8ec299c228ea.png)
    - https://www.benchresources.net/collection-interface-in-java/
- ---
-<br>
-
- 
-  ### List 인터페이스
-   - 
+   ```
+   List 인터페이스
+   - 중복허용하면서 저장순서가 유지되는 컬렉션을 구현할때 주로사용한다.
+   ```
+   ```
+   Set 인터페이스
+   - 중복을 허용하지 않고 저장순서가 유지되지않는 컬렉션 구현시 사용된다.
+   ```
+   ```
+   Map 인터페이스
+   - 키벨류를 하나의 쌍으로 묶어 구현한다. 키는 중복이 안된다.
+   ```
+   ```java
+   Map.Entry 인터페이스
+   - Map인터페이스의 내부 인터페이스이다
+   - 내부클래스와 같이 인터페이스도 인터페이스 안에 인터페이스를 정의하는 내부인터페이스를 정의하는것이 가능하다.
+   - 보다 객체지향적으로 설계하도록 유도하기 위한것
+   - Map 인터페이스를 구현하는 클래스에서는 Map.Entry인터페이스도 함께 구현해야한다.
+   
+   // Map 인터페이스의 소스코드 일부
+   public interface Map {
+    ...
+    interface Entry {
+      Object getKey();
+      Object getValue();
+      Object setValue(Obect value);
+      Boolean equals(Object o);
+      int hashCode();
+    }
+  }
+  ```
 
