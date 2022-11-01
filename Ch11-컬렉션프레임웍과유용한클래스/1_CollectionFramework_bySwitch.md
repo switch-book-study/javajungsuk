@@ -12,6 +12,7 @@
   Map인터페이스는 이들과는 전혀 다른형태로 컬렉션을 다루기때문에
   같은 상속계층도에 포함되지 못했다.
   ```
+  ---
   ```
   List 
   - 순서가 있는 데이터의 집합.
@@ -31,4 +32,17 @@
   - 키는 중복을 허용하지 않고 값은 중복을 허용한다.
   - 구현클래스: HashMap, TreeMap, Hashtable, Properties ...
   ```
-  
+---
+<br>
+
+
+  ### Collection 인터페이스
+   - ![image](https://user-images.githubusercontent.com/95848796/199273657-359e5d01-cf0d-46f6-8d85-8ec299c228ea.png)
+   - https://www.benchresources.net/collection-interface-in-java/
+ ---
+<br>
+
+ 
+  ### List 인터페이스
+   - 
+
