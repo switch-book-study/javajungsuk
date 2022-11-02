@@ -102,3 +102,101 @@ try문이 끝나고 finally블럭으로 이동한다.
 try문에서 return을 만나도 finally가 수행된다.
 
 ## 메서드에 예외 선언하기
+```java
+throws Exception1, Exception2 { }
+```
+`throws`는 선언할때
+`throw`는 메서드 몸통에서
+
+throws를 쓰면
+- 예외가 있다는걸 예측할 수 있음
+- 호출스택을 알 수 있음
+- 에러 맨위에있는게 최초 발생, 아래가 호출지점
+```java
+java.lang.Exception
+	at ExceptionEx18.method2 (ExceptionEx18.java:12)
+    at ExceptionEx18.method1 (ExceptionEx18.java:8)
+    at ExceptionEx18.main (ExceptionEx18.java:4) 
+```
+
+```java
+void method1() {
+	try { 
+    	throw new Exception();
+	} catch(Exception e) {}
+}
+
+method1();
+```
+위처럼 사용하면 정상작동하지만 어디서 예외가 발생됐는지 알 수 없다.
+
+```java
+void method1() throws Exception {
+	throw new Exception();
+}
+try {
+	method1();
+} catch(Exception e) {}
+```
+위처럼 사용해야 `method1()`을 호출한  부분에서 에러가 났다는것을 알 수있다.
+
+
+### 예외처리 방법 
+- 파라미터가 없는 메서드는 `메서드 내에서 예외처리`
+- 파라미터가 있는 메서드는 `호출쪽하는 쪽`에서 처리
+
+## 예외 되던지기
+```java
+	public static void main(String[] args) {
+		try {
+			method1();
+		} catch (Exception e) {
+			System.out.println("에러2");
+		}
+	}
+	
+	static void method1() throws Exception {
+		try {
+			throw new Exception();
+		} catch (Exception e) {
+			System.out.println("에러1");
+			throw e;
+		}
+	}
+```
+`throw e`로 호출쪽에도 예외가 발생되게 한다.
+`throw e`가 없으면 에러1만 출력된다.
+
+## 사용자 정의 예외 만들기
+개발자가 직접 예외를 만들 수 있다.
+```java
+public class Main {
+	public static void main(String[] args)  {
+		try {
+        	// throw MyException으로 돼있어서 
+            // catch로 갈수있다.
+            
+			test(); 
+		} catch (MyException e) {
+			System.out.println("에러 : " + e.getMessage());
+		}
+	}
+	
+    // 에러 메서드
+	public static void test() throws MyException {
+		throw new MyException("ERR");
+	}
+}
+
+// Exception 상속받기
+class MyException extends Exception {
+	public MyException(String msg) {
+		super(msg);
+	}
+}
+```
+`에러 : ERR` 출력
+
+> 정리 
+Exception안에 RuntimeException이 있다.
+예외가 발생하면 catch문에서 instanceof로 예외클래스랑 비교해서 처리됨
