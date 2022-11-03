@@ -139,3 +139,48 @@ Integer.parseInt(s);
 그 이후 `arraycopy`메서드로 이전 값을 복사한다.
 
 ## StringBuffer 인스턴스의 비교
+ - equals를 오버라이딩 하지않았다.
+ - String으로 변환 후 equals로 비교
+ 
+# Math클래스
+- 수학계산에 유용
+- static이라 인스턴스 생성 필요x
+
+# wrapper클래스
+- 기본형 -> 객체로 변환된 클래스
+- Boolean, Character, Byte, Short, Integer, Long, Float, Double
+- 래퍼클래스는 전부 equals가 오버라이딩 되서 객체값을 비교
+
+#### 문자열-> 기본형
+```java
+byte b = Byte.parseByte("100);
+int i = Integer.parseInt("100);
+```
+parse가 붙는다.
+
+#### 문자열 -> wrapper클래스
+```java
+Byte b = Byte.valueOf("100);
+Integer i = Integer.valueOf("100);
+```
+valueOf가 붙는다.
+
+-----
+
+```java
+Integer intg = (Integer)i; // 컴파일 전의 코드
+Integer intg = Integer.valoueOf(i); // 컴파일 후의 코드
+```
+컴파일 오토박싱으로 변경된다.
+
+# Number클래스
+숫자와 관련된건 Number클래스의 자손이다.
+`BigInteger` : long보다 큰범위의 정수
+`BigDecimal` : double보다 큰 범위의 부동소수점을 처리
+
+
+> _정리_
+- import없이 java.lang 사용가능
+- hashCode는 메모리값을 이용, `값 중복 절대x`
+- String내부는 char[]로 돼있다.
+- String으로 값을 지정하면 클래스파일에 `constant pool`이 저장되고 컴파일되면 `jvm heap영역`에 저장된다.
