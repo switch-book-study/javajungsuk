@@ -13,4 +13,12 @@
   ```
   - 이런 배열의 단점을 보완하기위해 링크드리스트라는 자료구조가 있다.
   - 링크드리스트는 불연속적으로 존재하는 데이터를 서로 연결한 형태로 구성되어있다.
-  - 
+  - ![image](https://user-images.githubusercontent.com/95848796/199726319-6ee71dcd-8b1f-4d17-b96b-aa4f5bc20bd2.png)
+  - linkedList의 각 노드들은 자신과 연결된 다음 요소에대한 참조(주소값)을 가지고있다.
+  ```java
+  class Node {
+    Node next;  // 다음 요소의 주소를 저장
+    Object obj; // 데이터를 저장
+  }
+  ```
+  
