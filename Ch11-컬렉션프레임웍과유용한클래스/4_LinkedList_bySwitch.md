@@ -31,4 +31,13 @@
     Object obj; //데이터를 저장
   }
   ```
+  - 더블 써큘러 링크드리스트
+  - ![image](https://user-images.githubusercontent.com/95848796/199729642-951791aa-7305-4652-9998-96a914f2067a.png)
+  - https://www.sanfoundry.com/c-program-circular-doubly-linked-list/
+  ---
+  <br>
   
+  
+  ```
+  - 순차적으로 추가/삭제 하는경우는 ArrayList가 LinkedList보다 빠르다
+  - 중간 데이터를 추가/삭제 하는경우에는 LinkedList가 ArrayList보다 빠르다
