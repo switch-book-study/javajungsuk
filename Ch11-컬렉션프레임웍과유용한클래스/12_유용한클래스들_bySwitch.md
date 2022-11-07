@@ -26,7 +26,26 @@
 ## Random
   - Ramdom보다는 Math.random()을 사용하는것이 권장된다.
 
+---
+<br>
+
+
 ## 정규식(Regular Expression) - Pattern, Match
   - 정규식이란 텍스트 데이터 중에서 원하는 조건과 일치하는 문자열을 찾아내기 위해 사용하는것이다.
   - 많은 양의 텍스트 파일 중에서 원하는 데이터를 손쉽게 뽑아낼 수도 있고 입력된 데이터가 형식에 맞는지 체크할 수도 있다.
-  - 
+  ```java
+  import java.util.regex.*;
+  
+  class RegularExample {
+    public static void main(String[] args) {
+      String[] data = {"bat", "baby", "cat" ... };
+      Pattern p = Pattern.complie("c[a-z]*"); //c로 시작하는 소문자영단어
+      
+      for (int i=0; i < data.length; i++) {
+        Matcher m = p.matcher(data[i]);
+        if(m.matches())
+          System.out.print(data[i] + ",");
+      }
+    }
+  }
+  ```
