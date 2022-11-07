@@ -66,3 +66,12 @@
 
 
 ## Scanner
+  - 입력소스로부터 문자데이터를 읽어오는데 도움을 준다.
+  ```java
+  Scanner s = new Scanner(System.in);
+  String input = s.nextLine();
+  ```
+  
+## StringTokenizer
+  - 긴 문자열을 지정된 구분자를 기준으로 토큰이라는 여러개의 작은 문자열로 잘라내는 데 사용된다.
+  - 구분자로 단 하나의 문자밖에 사용하지 못하기때문에 보다 복잡한 형태의 구분자로 나누어야할때는 Scanner나 split메서드를 사용해야한다.
