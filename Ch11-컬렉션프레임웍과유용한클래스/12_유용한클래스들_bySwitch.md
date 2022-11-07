@@ -19,4 +19,14 @@
   
   Calendar cal = Calendar.getInstance();  // Ok . getInstance()메서드는 Calendar 클래스를 구현한 클래스의 인스턴스를 반환한다.
   ```
-  
+---
+<br>
+
+
+## Random
+  - Ramdom보다는 Math.random()을 사용하는것이 권장된다.
+
+## 정규식(Regular Expression) - Pattern, Match
+  - 정규식이란 텍스트 데이터 중에서 원하는 조건과 일치하는 문자열을 찾아내기 위해 사용하는것이다.
+  - 많은 양의 텍스트 파일 중에서 원하는 데이터를 손쉽게 뽑아낼 수도 있고 입력된 데이터가 형식에 맞는지 체크할 수도 있다.
+  - 
