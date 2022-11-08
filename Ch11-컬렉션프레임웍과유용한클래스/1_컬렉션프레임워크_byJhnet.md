@@ -49,19 +49,36 @@ values() : 반환타입 `Collection` value중복됨
 keySet() : 반환타입 `Set` value중복안됨
 
 ### Map.Entry 인터페이스
-Map의 내부 인터페이스
-
-> 대기
+- `Map`의 내부 인터페이스
+- `Map`의 `Key`, `Value`를 다루기위해 정의해놓은 인터페이스
 
 ## 동기화
 - 멀티쓰레드에서는 동기화가 필요
-- Vector, HashTable은 자체적으로 동기화됨
-- 새로운 ArrayList, HashMap은 동기화 메서드로 해야함
-- 동기화가 필요할때 Collections클래스에서 사용하면됨
-
-> 대기
+- `Vector`, `HashTable`은 자체적으로 동기화됨
+- `ArrayList`, `HashMap`등등 클래스는 동기화 메서드로 해야함
+- 동기화가 필요할때 `Collections`클래스에서 사용하면됨
+ex) 
+```java
+List list = Collections.synchronizedList(new ArrayList<>());
+```
 
 ## Vector와 ArrayList
+기능이 매우 비슷함
+
+### 공통점
+- List인터페이스 구현
+- 데이터의 저장공간을 배열로 사용
+- 멤버변수가 `Object`
+
+### 차이점
+- Vector는 동기화o, ArrayList는 동기화x
+- ArrayList에서 removeRange() 메서드 추가
+
+### 장단점
+- 데이터 읽기, 저장 효율좋음
+- 용량 변경을 하면 `새 인스턴스에 복사`
+
+
 
 ## LinkedList
 
